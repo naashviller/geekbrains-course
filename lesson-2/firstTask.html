@@ -1,0 +1,48 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	var count_right = 0;
+
+	var first_guess = prompt("What is the last month in the year?");
+	var first_answer = "December";
+
+	if (first_answer == first_guess) {
+		alert("you're right! the first game is done :( ");
+	} else {
+		alert("you're NOT right, sorry dude");
+	}
+
+
+	var second_guess = prompt("What is the first month of year?");
+	var second_answer = "January";
+
+	if (second_answer == second_guess) {
+		document.write("you're right! ");
+		count_right +=1;
+	} else {
+		alert("you're NOT right, sorry dude");
+	}
+
+	var third_guess = prompt("What is the month today?");
+	var third_answer = "January";
+
+	if (third_answer == third_guess) {
+		document.write("you're right! ");
+		count_right +=1;
+	} else {
+		alert("you're NOT right, sorry dude");
+	}
+
+	var fourth_guess = prompt("What is the day today?");
+	var fourth_answer = "Monday";
+
+	if (fourth_answer == fourth_guess) {
+		alert("you're right! ");
+		count_right +=1;
+	} else {
+		alert("you're NOT right, sorry dude");
+	}
+
+	alert("you guess " + count_right + " times");
+
+</script>

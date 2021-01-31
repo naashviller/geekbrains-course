@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	var n = +prompt("Write contribution!");
+	var a = +prompt("Write a percent!");
+	var year = 0;
+
+	for (i = 1; i <= 5; i++) {
+		var percent = (n*a)/100;
+		n +=percent;
+		alert("Now your contribution is " + n);
+		year++;
+		alert("The year is " + year);
+	}
+
+</script>

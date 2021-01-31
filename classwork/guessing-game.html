@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	
+	var answer = parseInt(Math.random()*100);//случайное число загадали
+	//document.write(answer);
+	var user_answer = +prompt("Guess the number");
+
+	if (user_answer > answer){
+		document.write("too many");
+	} else if (user_answer == answer){
+		alert("you're right!");
+	} else {
+		document.write("less than expect");
+	}
+
+</script>

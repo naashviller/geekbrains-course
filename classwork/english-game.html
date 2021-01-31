@@ -1,0 +1,67 @@
+<meta charset="utf-8">
+<script type="text/javascript">
+	/*
+	var words = [
+		["food", "еда"],
+		["apple", "яблоко"],
+		["blue", "голубой"],
+		["sun", "солнце"],
+		["bread", "хлеб"],
+	]
+
+	while (words != 0) {
+		var i = parseInt(Math.random() * words.length);
+
+		var userTranslate = prompt("Try to guess " + words[i][0]);
+		if (userTranslate == words[i][1]){
+			alert("youre right");
+			words.splice(i, 1); //delete one element
+		} else {
+			alert("its NOT correct :(  The right answer is " + words[i][1]);
+		}
+	}
+
+	alert("Congrats! You remembered all words");
+	*/
+
+	function askForWords(words) {
+		while (words != 0) {
+
+			var i = parseInt(Math.random() * words.length);
+			var userTranslate = prompt("Try to guess " + words[i][0]);
+			
+			if (userTranslate == words[i][1]){
+				alert("youre right");
+				words.splice(i, 1); //delete one element
+			} else {
+				alert("its NOT correct :(  The right answer is " + words[i][1]);
+			}
+
+
+		}
+		
+		alert("Congrats! You remembered all words");
+
+	}
+
+	var words = [
+		["food", "еда"],
+		["apple", "яблоко"],
+		["blue", "голубой"],
+		["sun", "солнце"],
+		["bread", "хлеб"],
+	]
+
+	var hardWords = [
+		["phone", "телефон"],
+		["bottle", "бутылка"],
+		["coffee", "кофи"],
+		["forest", "лес"],
+		["bulat", "пидарас"],
+	]
+
+
+	askForWords(words);
+	askForWords(hardWords);
+
+</script>
