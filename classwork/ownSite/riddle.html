@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Own site</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript">
+		var score = 0;
+
+		function checkAnswer(inputId, answers) {
+			var userAnswer = document.getElementById(inputId).value;
+			userAnswer = userAnswer.toLowerCase();
+
+			for(var i = 0; i < answers.length; i++){
+				if (userAnswer == answers[i]) {
+					score++;
+					break;
+				}
+			}
+		}
+
+		function checkAnswers(){
+
+			checkAnswer("userAnswer1", ["giraffe", "жираф"]);
+			checkAnswer("userAnswer2", ["crocodile", "крокодил"]);
+			checkAnswer("userAnswer3", ["the second", "second"]);
+
+			alert(" You won " + score + " of 3 riddles! ");
+		}
+		
+
+
+
+	</script>
+</head>
+<body>
+	<div class="content">
+		<div class="header">
+			<a href="index.html">Main</a>
+			<a href="#">Riddle</a>
+			<a href="guessing.html">Guessing</a>
+			<a href="password.html">Generate password</a>
+
+	</div>
+
+
+
+	<div class="contentWrap">
+		<div class="content">
+			<div class="center">
+
+				<h1>Riddle game</h1>
+
+
+				<p>A lot of spots. A long, long neck A funny scarf It's…   ?</p>
+				<input type="text" id="userAnswer1">
+
+				<p>Green and long & many teeth. Beautiful smile. It's…  ?</p>
+				<input type="text" id="userAnswer2">
+
+				<p>Who succeeded the first President?</p>
+				<input type="text" id="userAnswer3">
+				<br>
+
+				<a href="#" onclick="checkAnswers();">Answer</a>
+
+
+
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+
+<div class="footer">
+	Copyright &copy; Anastasiia
+</div>
+
+</body>
+</html>
+ 
