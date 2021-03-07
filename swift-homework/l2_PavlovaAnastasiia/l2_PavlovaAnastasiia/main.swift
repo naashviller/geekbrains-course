@@ -26,3 +26,20 @@ func division() -> String {
     return "не делится на 3"
 }
 print(division())
+
+
+func createArray() {
+    var arrayFirst :[Int] = []
+    for i in 1...100 {
+        arrayFirst.append(i);
+        //print(array[i]);
+        
+    }
+
+    let n = arrayFirst.filter({$0 % 2 != 0 && $0 % 3 == 0})
+        print(n)
+    
+}
+createArray()
+
+
