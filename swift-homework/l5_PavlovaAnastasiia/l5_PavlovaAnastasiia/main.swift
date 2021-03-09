@@ -24,22 +24,22 @@ protocol Car {
 
 extension Car {
     func openWindow() -> Bool {
-        return checkWindow() == true
+        window == true
     }
 }
 extension Car {
     func closeWindow() -> Bool {
-        return checkWindow() == true
+        window == false
     }
 }
 extension Car {
     func engineOn() -> Bool {
-        return checkEngine() == true
+        engine == true
     }
 }
 extension Car {
     func engineOff() -> Bool {
-        return checkEngine() == true
+        engine == false
     }
 }
 
@@ -147,4 +147,16 @@ extension TrunkCar: CustomStringConvertible {
         }
     }
 }
+var sportcar1 = SportCar(year: 2003, km: 10000.34, window: true, engine: true, door: false, mark: "Hundai", model: "Solaris", flowBreaker: true)
+var trunkcar1 = TrunkCar(year: 2021, km: 100, window: false, engine: false, door: true, mark: "Toyota", model: "Rav 4", trailer: true)
 
+sportcar1.checkEngine()
+sportcar1.checkWindow()
+print(sportcar1.description)
+
+trunkcar1.checkEngine()
+trunkcar1.checkWindow()
+print(trunkcar1.description)
+
+print("the sport car km is \(sportcar1.km), model is \(sportcar1.model), mark is \(sportcar1.mark)")
+print("the sport car km is \(trunkcar1.km), model is \(trunkcar1.model), mark is \(trunkcar1.mark)")
