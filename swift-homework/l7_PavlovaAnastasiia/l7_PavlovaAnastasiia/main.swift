@@ -30,7 +30,7 @@ struct Task {
 
 enum doTasksError: Error {
     case noTasks
-    case managerHaveIll
+    case tooMachTasks
     case anotherTask
 }
 
@@ -42,16 +42,22 @@ class DelegateTasks {
         "Give salary": Task(priority: "very high", costMoney: 500000, time: 24, complexity: Tasks(hard: "nil", medium: "medium", easy: "nil"))
     ]
     
-    func doTasks(taskName name: String) -> (Tasks?, doTasksError?) {
+    func doTasks(taskName name: String) throws -> (Tasks?, doTasksError?) {
         
         guard let taskName = tasks[name] else {
             return (nil, doTasksError.anotherTask)
         }
         
         guard name.count > 0  else {
-            return (nil, doTasksError.noTasks)
+            throw doTasksError.noTasks
         }
         
+        do {
+            name.contains("error")
+        } catch let error {
+            print( doTasksError.tooMachTasks)
+        }
+         
         switch name {
         case "Write program":
             print("this task will do \(Colleagues.usualWorkers)")
@@ -64,11 +70,14 @@ class DelegateTasks {
         return (taskName.complexity, nil)
         
     }
+    
+    
 }
 
 
 let task = DelegateTasks()
-let task1 = task.doTasks(taskName: "Write program")
-let task2 = task.doTasks(taskName: "frgr")
-let task3 = task.doTasks(taskName: "Do road map")
+let task1 = try task.doTasks(taskName: "Write program")
+let task2 = try task.doTasks(taskName: "frfrfr")
+let task3 = try task.doTasks(taskName: "Do road map")
+let rask4 = try task.doTasks(taskName: "error FFFUK")
 
